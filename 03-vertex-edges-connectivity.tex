@@ -7,7 +7,50 @@
 
 \section{Connectivity}
 
-\subsection{vertex connectivity}
+\subsection{Vertex connectivity}
+
+\textbf{Vertex cut} in a connected graph $G = (V,E)$ is a set $S \subseteq V$ such that $G \setminus S = G[V \setminus S]$ has at least two connected components. A \textbf{cut vertex} is a vertex $v$ whose deletion disconnects the graph.\\
+$G$ is called \textbf{k-connected} if $|V(G)| > k$ and if $G \setminus X$ is connected for every set $X \subseteq V$ with $|X| < k$. A graph $G$ is k-connected if and only if $|V(G)| > k$ and deleting any set $|X| < k$ leave $G$ connected.
+
+Example:
+\todo[inline]{Add the example here}
+
+Let's $K(G)$\footnote{$K$ is the greek letter Kappa} be the maximum $k$ subject to $G$ is k-connected.
+
+Example:
+$G = K_{n}: K(G) = n-1$
+$G = K_{m,n}, m < n: K(G) = m$
+
+\textit{Proof}: Let $|S| \leq m-1$. So, $G \setminus S$ has at least one vertex on each part and these vertices connects everything.
+\\
+\textit{Claim}: $K(G) \leq \delta(G)$
+\textit{Proof}: Let $v$ be a vertex of $G$ subject to $d(v) = \delta(G)$, delete all neighbors of $v$ ($N(v)$):
+\begin{itemize}
+\item if $|G| \geq \delta(G) + 1$ and exists a set of size $\delta(G)$ which disconnects the graph, then $K(G) \leq \delta(G)$
+\item if $|G| \geq \delta(G) + 2$, then indeed, deleting $N(v)$ disconnects $G$ therefore $K(G) \leq \delta(G)$
+\item if $|G| = \delta(G) + 1$, by definition $K(G) \leq \delta(G)$
+\end{itemize}
+
+Note: high minimum degree does not imply connectivity, for instance, consider two disjoint copies of $K_{n}$
+\todo[inline]{Add the example here}
+
+\subsubsection{Mader Theorem}
+Every grapg with average degree of, at least, $4k$ has a k-connected subgraph.
+\textit{Proof} by induction: for $k = 0$ we just have one vertex, for $k=1$ we just have one edge, so, let's consider $k\geq 2$.
+\textit{Claim}: let $G$ be an n-vertex graph with m edges.
+\begin{enumerate}
+\item $n \geq 2k - 1$
+\item $m \geq (2k-3)(n-k+1)+1$
+\end{enumerate}
+If both statements holds, then $G$ contains a k-connected subgraph
+
+Note average degree of $4k$ implies:
+\begin{enumerate}
+\item existence of one vertex $v$ with $d(v) \geq 4k$, then $n \geq 4k + 1$
+\item $m \geq \frac{4kn}{2} = 2kn$
+\end{enumerate}
+
+Let's check that $n = 2k-1$ statement is true. Then $m \geq (2k-3)(n-k+1)+1 = (n-2)\frac{n+1}{2}+1 = \frac{n(n-1)}{2}$.\footnote{given $n=2k-1$ then $k=\frac{n+1}{2}$} So, $G$ is a complete graph. $G$ itself is $n-1 = 2k-2 \geq $ k-connected
 
 \subsubsection{edge connectivity}
 
@@ -18,7 +61,5 @@
 \subsubsection{Mader's theorem}
 
 \subsection{Menger's theorem}
-
-\todo[inline]{add content}
 
 \end{document}

@@ -9,6 +9,35 @@
 % This was never tested in the exam before
 
 \subsection{Graphs}
+\textbf{Graph} $G = (V,E)$. $V$ = finite set of objects called vertices. $E$ = collection of pairs of vertices called edges.
+
+Examples:
+\begin{itemize}
+\item $V$ = set of people in a room. $E$ = pairs of people who new each other before enter the room.
+\item $V$ = set of cities in some country. $E$ = pairs of cities connected by direct road.
+\item $V$ = pages of people on facebook. $E$ = people who are friends
+\end{itemize}
+
+\textit{Definition}: $e(G)$ = number of edges in $G$. $e(G) = |E(G)|$
+
+Some remarks:
+\begin{itemize}
+\item we will consider mostly \textbf{simple graphs}
+\item if there are more than one edge between some vertices, the graph is called \textbf{multigraph}
+\item \textbf{loop} is an edge connecting a vertice to itself.
+\end{itemize}
+
+\textit{Definition}: if $(u,v)$ is an edge, we say $u$ is \textbf{adjacent} to $v$. We also say that $e$ is incident to vertices $u$ and $v$.
+\begin{itemize}
+\item we call two edges $e$ and $e'$ \textbf{incident} if $e \cap e' \neq 0$
+\item if $e=(u,v)$ then $v$ is a \textbf{neighbor} of $u$
+\end{itemize}
+
+$N(u)$ is the set of all neighbors of $u$, i. e., set of all $v$ where $(u,v)$ is an edge.
+$|N(u)|$ is the degree of $u$
+
+\textit{Puzzle}: Show that every graph has at least two vertices of the same degree
+
 
 \subsection{Isomorphism}
 
